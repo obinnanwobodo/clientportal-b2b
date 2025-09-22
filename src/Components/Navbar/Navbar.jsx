@@ -34,7 +34,7 @@ import Settings from '../Settings/Settings.jsx';
 
 const Navbar = () => {
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false); // Changed to false by default
-    const [activeMenu, setActiveMenu] = useState("Dashboard");
+    const [activeMenu, setActiveMenu] = useState("Overview");
     const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
 
@@ -66,13 +66,13 @@ const Navbar = () => {
 
     const renderContent = () => {
         switch (activeMenu) {
-            case "Dashboard":
+            case "Overview":
                 return <Overview isSidebarCollapsed={isSidebarCollapsed}/>;
-            case "Users":
+            case "Projects":
                 return <Projects isSidebarCollapsed={isSidebarCollapsed}/>;
-            case "Reports":
+            case "Invoices":
                 return <Invoices isSidebarCollapsed={isSidebarCollapsed}/>;
-            case "Analytics":
+            case "Settings":
                 return <Settings isSidebarCollapsed={isSidebarCollapsed}/>;
             default:
                 return (
@@ -110,20 +110,20 @@ alt='navlogo'
                 <div className={`${styles.wholemenu}`}>
                     <h2>MAIN MENU</h2>
                     <div className={`${styles.dura}`}>
-                        <div className={`${styles.theduras} ${activeMenu === "Dashboard" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Dashboard")}>
+                        <div className={`${styles.theduras} ${activeMenu === "Overview" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Overview")}>
                             <div><MdGridView /></div>
                             <p>Overview</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Users" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Users")}>
+                        <div className={`${styles.theduras} ${activeMenu === "Projects" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Projects")}>
                             <div><GoFileDirectory /></div>
                             <p>Projects</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Reports" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Reports")}>
+                        <div className={`${styles.theduras} ${activeMenu === "Invoices" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Invoices")}>
                             <div><LuDollarSign />
 </div>
                             <p>Invoices</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Analytics" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Analytics")}>
+                        <div className={`${styles.theduras} ${activeMenu === "Settings" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Settings")}>
                             <div><CiSettings />
 </div>
                             <p>Settings</p>

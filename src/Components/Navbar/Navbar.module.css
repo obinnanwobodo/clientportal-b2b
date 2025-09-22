@@ -65,6 +65,32 @@ left: 0; /* Moves the top nav to the far left */
 
 
 
+.collapsed .dashboardContainer{
+    width: 100%;
+}
+
+.collapsed .genmap2{
+    width: 100%;
+
+}
+
+
+
+.collapsed .container{
+    width: 100%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* LEFT MENU */
 
