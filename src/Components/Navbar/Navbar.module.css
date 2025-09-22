@@ -1,0 +1,737 @@
+.navgen {
+  display: flex;
+  height: 100vh;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Prevents horizontal scrollbar when sidebar is off-screen */
+}
+
+/* COLLAPSED STATE */
+.collapsed .menuside {
+  width: 0; /* The magic happens here! Collapses the sidebar to zero width */
+}
+
+.collapsed .topnavside {
+  left: 0; /* Moves the top nav to the far left */
+  width: 100%; /* Makes the top nav full width */
+}
+
+.collapsed .eachbox {
+  left: 0; /* Moves the top nav to the far left */
+  width: 300px; /* Makes the top nav full width */
+}
+
+.topnavndcontent.expanded {
+
+  display: flex;
+  justify-content: flex-start;  
+  position: relative;
+
+ 
+}
+
+
+.collapsed  .revtrendgen{
+left: 0; /* Moves the top nav to the far left */
+  width: 100%; /* Makes the top nav full width */
+}
+/* .revnduser{ */
+.collapsed .usergen{
+left: 0; /* Moves the top nav to the far left */
+  width: 100%; /* Makes the top nav full width */
+}
+
+
+
+.collapsed .recentgen{
+left: 0; /* Moves the top nav to the far left */
+  width: 100%; /* Makes the top nav full width */
+}
+
+
+
+
+.collapsed .devicegen{
+left: 0; /* Moves the top nav to the far left */
+  width: 100%; /* Makes the top nav full width */
+}
+
+
+.collapsed .eachofthem{
+left: 0; /* Moves the top nav to the far left */
+  width: 310px; /* Makes the top nav full width */
+}
+
+
+
+
+
+
+/* LEFT MENU */
+
+.menuside {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e7eb;
+  color: #fefefe;
+  width: 19%; /* Initial state of the sidebar */
+  transition: width 0.3s ease; /* Smooth transition for collapsing */
+  position: relative; /* Needed for z-index, but not for layout */
+  z-index: 1100;
+  overflow: hidden; /* Hides content when width collapses to 0 */
+    border-right: 2px solid #d1d1d1;
+
+}
+
+.menuicnndtext{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 20px;
+    gap: 12px;
+    position: relative;
+    bottom: 7px;
+
+}
+
+.menuicnndtext::after{
+    content: '';
+    background-color: #d1d1d1;
+    height: 1px;
+    width: 108%;
+    position: absolute;
+    margin-top: 90px;
+    transform: translateX(-30px);
+   
+    
+}
+
+.genContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-grow: 1; /* This is the key change! It takes up all remaining space */
+  background: #e5e7eb;
+  padding-top: 80px; /* Adjust padding to account for the top nav */
+  overflow-y: auto;
+}
+
+.menuicnndtext h2{
+font-size: 20px;
+color: #111827;
+font-family: system-ui;
+font-weight: 600;
+}
+
+
+.menuicnndtext p{
+font-size: 14px;
+color: #3e578e;
+font-family: system-ui;
+}
+
+
+.hndp{
+    display: flex;
+    flex-direction: column;
+   
+
+}
+
+.trendicn{
+
+   width: 40px;
+   height: 40px;
+    border-radius: 5px;
+}
+
+.trendicn img{
+    border-radius: 10px;
+}
+
+
+
+.topnavside{
+    display: flex;
+}
+
+
+
+
+
+.profilesection{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+.wholemenu{
+    display: flex;
+    flex-direction: column;
+padding: 23px;
+gap: 13px;
+}
+
+.wholemenu h2{
+    font-size: 12px;
+    font-family: system-ui;
+    color: #111827b2;
+    font-weight: 500;
+}
+
+
+.theduras{
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-family: system-ui;
+  color: #3c83fc;
+  font-weight: 500;
+
+  padding: 10px 5px;     /* FIXED padding (top/bottom, left/right) */
+  border-radius: 8px;
+}
+
+.theduras:hover{
+    width: 100%;
+   color: #fefefe;
+    background-color: #333333;
+    padding-left: 5px;
+    border-radius: 8px;
+    height: max-content;
+    
+
+}
+
+.wholemenu svg{
+    width: 16px;
+    height: 16px;
+}
+
+
+
+
+.activeMenu {
+    display: flex;
+  color:  #4251f0;             /* blue text */
+  background-color: #ffffff;  /* white background */
+  border-radius: 8px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 10px;
+  font-weight: 600;           /* bolder look */
+   gap: 12px; 
+}
+
+
+.dura{
+    
+}
+
+
+
+
+
+
+
+
+/* TOPSIDE NAV */
+
+.topnavndcontent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+    
+/* TOP NAV BAR */
+.topnavside {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 62px;
+  background: #fefefe;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  z-index: 1200;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease, width 0.3s ease; /* Transition for the top nav */
+  gap: 200px;
+}
+
+.searchgen div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+   background-color: #f3f4f680; 
+   padding: 5px;
+   border-radius: 8px;
+}
+
+.searchgen input{
+    width: 300px;
+    outline: none;
+    color: #21242c;
+}
+
+.sidebaricn{ 
+    display: flex;
+    margin-left: 20px;
+   color: #6e7a91;
+font-weight: 700;
+ padding: 10px;          /* set the padding here */
+  border-radius: 8px; 
+}
+
+.sidebaricn svg {
+  color: #6e7a91;
+}
+
+.sidebaricn:hover{
+        background-color: #4251f01a;
+      color: #6e7a91 ; 
+}
+
+
+.notifygen {
+      position: relative; 
+      
+}
+
+.notifygen span{
+    display: flex;
+    background-color: red;
+    position: relative;
+    bottom: 33px;
+    left: 17px;
+    border-radius: 50%;
+    width: 15px;
+    height: 20px;
+    justify-content: center;
+}
+
+.notifygen svg{
+    display: flex;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    color: #21242c;
+}
+
+.notifyicn{
+ padding: 10px;
+        border-radius: 8px;
+        position: relative;
+    top: 10px;
+
+}
+
+.notifyicn:hover{
+    background-color: #4251f01a;
+        color: #0c0e11;
+        justify-content: center;
+        align-items: center;
+       
+}
+
+
+.notificationDropdown{
+    display: flex;
+    flex-direction: column;
+      position: absolute;
+  top: 40px;       /* distance below the bell */
+  right: 0;        /* align to right */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+gap: 20px;
+}
+
+
+.notificationDropdown h3{
+font-weight: 500;
+    color: #21242c;
+    font-size: 14px;
+    font-family: system-ui;
+}
+
+
+.notificationDropdown p{
+    font-size: 12px;
+    color: #6e7a91;
+    font-family: system-ui;
+
+}
+
+.noti::after{
+    content: '';
+    height: 1px;
+    width: 100%;
+    
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    
+}
+
+
+.grpgen{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grp1:hover, .grp2:hover, .grp3:hover{
+background-color: #e5e7eb;
+border-radius: 8px;
+}
+
+
+
+
+
+
+/* PROFILE */
+
+
+.prof{
+    border-radius: 150%;
+}
+
+
+
+
+.profileDropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  position: absolute;
+  top: 50px;       /* just under avatar */
+  right: 5px;
+  margin-right: 280px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 2000;
+}
+
+
+.profileDropdown p{
+
+    font-weight: 500;
+    color: #21242c;
+    font-size: 14px;
+    font-family: system-ui;
+}
+
+
+.profndicn, .setndicn,.logout{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} 
+
+
+.profileDropdown h3{
+     font-size: 12px;
+    color: #6e7a91;
+    font-family: system-ui;
+
+}
+
+.profndset{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.logout{
+    color: #ef4343 !important;
+}
+
+.profndicn:hover, .setndicn:hover, .logout:hover{
+    background-color: #e5e7eb;
+border-radius: 8px;
+padding: 1px;
+}
+
+
+
+
+
+
+
+
+/* Sidebar when collapsed */
+.navgen.collapsed .menuside {
+    width: 0px; /* Reduced width for the sidebar */
+}
+
+/* Main content when sidebar is collapsed */
+.topnavndcontent.expanded {
+    width: 100%; /* Main content expands to fill the remaining space */
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVNESS */
+
+
+@media (max-width: 768px) {
+  /* Main Layout Adjustment for Mobile */
+  .navgen {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Top Navbar */
+  .topnavside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+    gap: 15px;
+    justify-content: space-between;
+    height: 60px;
+    transition: none; /* No transition on top nav for instant changes */
+  }
+
+  .sidebaricn {
+    display: flex; /* Ensure the menu icon is visible */
+    margin-left: 0;
+    font-size: 24px;
+    color: #0c0e11; /* Change color for better visibility */
+  }
+
+  .searchgen{
+    display: flex;
+    width: 200px; 
+  }
+
+  .searchgen input{
+    width: 100%;
+  }
+
+  .profilesection{
+    display: flex; 
+  }
+  
+  /* Notifications Dropdown for Mobile */
+  .notifygen {
+    position: relative;
+    z-index: 1001;
+  }
+  
+  .notificationDropdown {
+      right: 10px;
+    
+    
+  }
+
+  .profileDropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+   margin-left: 150px;
+    left: 0;
+    width: 55%;
+  }
+
+  .profndset svg{
+    color: #21242c;
+  }
+
+  /* Sidebar for Mobile */
+  .menuside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 70%; /* Covers 70% of the screen */
+    transform: translateX(-100%); /* Hides the sidebar by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 2000;
+  }
+  
+  /* When sidebar is not collapsed, it slides in */
+  .navgen:not(.collapsed) .menuside {
+    transform: translateX(0);
+  }
+
+  .collapsed .menuside {
+    transform: translateX(-100%);
+  }
+
+  /* Top nav and content for mobile */
+  .topnavndcontent {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  /* Hides the text on the sidebar on smaller screens when collapsed */
+  .navgen.collapsed .menuside .hndp,
+  .navgen.collapsed .menuside .wholemenu h2 {
+      display: none;
+  }
+  .navgen.collapsed .menuside .theduras p {
+      display: none;
+  }
+
+    
+
+  /* This adds a transparent overlay over the main content when the sidebar is open */
+  .navgen:not(.collapsed) .topnavndcontent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1500;
+  }
+  .sidebaricn{
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    
+  }
+}
+
+
+
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  /* Adjustments for the main container layout */
+  .navgen {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Adjustments for the sidebar */
+  .menuside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px; /* A fixed width for the sidebar on these screens */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2000;
+  }
+  
+  /* Sidebar toggle when open */
+  .navgen:not(.collapsed) .menuside {
+    transform: translateX(0);
+  }
+
+  /* Ensure the sidebar hides when in a collapsed state */
+  .collapsed .menuside {
+    transform: translateX(-100%);
+  }
+
+  /* Adjustments for the top navigation bar */
+  .topnavside {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    position: fixed;
+    top: 0;
+    left: 0; /* Align to the left */
+    padding: 0 20px; /* Add padding on both sides */
+    width: 100%;
+    gap: 20px; /* Increase gap for better spacing */
+    height: 60px;
+    background-color:  #e5e7eb; /* Updated background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1200; /* Ensure it's on top of other content */
+    transition: none;
+  }
+
+  /* Show the mobile toggle icon and position it to the right */
+  .sidebaricn {
+    display: flex; /* Keep this to display the icon */
+    font-size: 24px;
+    color: #6e7a91;
+    cursor: pointer;
+  }
+
+  /* Make sure the desktop toggle is hidden in this view */
+  .desktopToggle {
+    display: block; /* Hide the desktop toggle */
+    
+  }
+
+  /* Adjustments for the main content area */
+  .topnavndcontent {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 80px; /* Increase top padding to prevent content overlap */
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Adjustments for search and profile on medium screens */
+  .searchgen {
+    flex: 1; /* Allow search bar to grow and take up space */
+    max-width: 350px; /* Limit its size */
+  }
+
+  .profilesection {
+    margin-left: auto; /* Push the profile section to the right */
+  }
+
+  .profileDropdown{
+    display: flex;
+    flex-direction: column;
+right: 0;
+margin-right: 30px; 
+width: 30%;
+   
+  }
+
+  .profndset svg{
+    color: #21242c;
+  }
+}
+
+
+
+
+@media (min-width: 769px) {
+   .desktopToggle {
+    display: none;
+   }
+
+   .profndset svg{
+    color: #21242c;
+  }
+}
