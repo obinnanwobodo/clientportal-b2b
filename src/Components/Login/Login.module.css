@@ -150,3 +150,68 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+
+
+
+/* RESPONSIVNESS */
+
+
+@media (max-width: 768px) {
+  /*
+    Styles for small tablets and mobile phones.
+    This will apply to devices like an iPad Mini in portrait mode or any modern smartphone.
+  */
+  .loginCard {
+    padding: 30px;
+    margin: 0 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .loginForm input {
+    font-size: 0.9rem;
+  }
+
+  .options {
+    flex-direction: column; /* Stack the "Remember me" and "Forgot password" links */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .loadingBox {
+    padding: 20px;
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .loadingBox p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  /*
+    Styles for tablets and smaller laptops.
+    The page is already well-suited for these sizes, so we'll just make some minor adjustments.
+  */
+  .loginCard {
+    max-width: 450px; /* Give the card a bit more room to breathe */
+    padding: 40px 50px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

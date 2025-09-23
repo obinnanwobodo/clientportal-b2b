@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div className={styles.loginWrapper}>
-      
+
 
       <div className={styles.loginCard}>
         <h1 className={styles.title}>Welcome Back</h1>
@@ -35,7 +35,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Free to access for now, put any email"
-            required   
+            required
           />
 
           <label>Password</label>

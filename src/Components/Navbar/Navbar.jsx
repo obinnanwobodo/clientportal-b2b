@@ -1,105 +1,99 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { IoMdTrendingUp, IoMdNotificationsOutline } from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsLayoutSidebar } from "react-icons/bs";
 import { FiSearch, FiUser } from "react-icons/fi";
-
-
-
 import { MdGridView } from "react-icons/md";
 import { GoFileDirectory } from "react-icons/go";
 import { LuDollarSign } from "react-icons/lu";
 import { CiSettings } from "react-icons/ci";
-import logo from '../../../public/Gemini_Generated_Image_gd27dugd27dugd27.png'
-
-
+import logo from '../../../public/Gemini_Generated_Image_gd27dugd27dugd27.png';
+import profile from '../../../public/Gemini_Generated_Image_j376fwj376fwj376.png';
 import Overview from '../Overview/Overview';
-import profile from '../../../public/Gemini_Generated_Image_j376fwj376fwj376.png'
-import styles from './Navbar.module.css'
 import Projects from '../Projects/Projects.jsx';
 import Invoices from '../Invoices/Invoices.jsx';
 import Settings from '../Settings/Settings.jsx';
-
-
-
-
-
-
-
-
-
-
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
-    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false); // Changed to false by default
+    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
     const [activeMenu, setActiveMenu] = useState("Overview");
     const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+    const notifyRef = useRef(null);
+    const profileRef = useRef(null);
 
     const handleSidebarToggle = () => {
         setIsSidebarCollapsed(!isSidebarCollapsed);
     };
 
     const handleNotificationsToggle = () => {
-        setIsNotificationsOpen((prev) => {
+        setIsNotificationsOpen(prev => {
             if (!prev) setIsProfileOpen(false);
             return !prev;
         });
     };
 
     const handleProfileToggle = () => {
-        setIsProfileOpen((prev) => {
+        setIsProfileOpen(prev => {
             if (!prev) setIsNotificationsOpen(false);
             return !prev;
         });
     };
 
-    // New handler to close sidebar on main content click
     const handleMainContentClick = () => {
-        // Only close sidebar on mobile if it's open
         if (window.innerWidth <= 1200 && !isSidebarCollapsed) {
             setIsSidebarCollapsed(true);
         }
     };
 
+    // Close notifications/profile when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (notifyRef.current && !notifyRef.current.contains(event.target)) {
+                setIsNotificationsOpen(false);
+            }
+            if (profileRef.current && !profileRef.current.contains(event.target)) {
+                setIsProfileOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     const renderContent = () => {
         switch (activeMenu) {
             case "Overview":
-                return <Overview isSidebarCollapsed={isSidebarCollapsed}/>;
+                return <Overview isSidebarCollapsed={isSidebarCollapsed} />;
             case "Projects":
-                return <Projects isSidebarCollapsed={isSidebarCollapsed}/>;
+                return <Projects isSidebarCollapsed={isSidebarCollapsed} />;
             case "Invoices":
-                return <Invoices isSidebarCollapsed={isSidebarCollapsed}/>;
+                return <Invoices isSidebarCollapsed={isSidebarCollapsed} />;
             case "Settings":
-                return <Settings isSidebarCollapsed={isSidebarCollapsed}/>;
+                return <Settings isSidebarCollapsed={isSidebarCollapsed} />;
             default:
                 return (
                     <div className={`${styles.genContent}`}>
-                        <h2>Welcome to Cient Portal!</h2>
+                        <h2>Welcome to Client Portal!</h2>
                     </div>
                 );
         }
-    }
+    };
 
     return (
         <div className={`${styles.navgen} ${isSidebarCollapsed ? styles.collapsed : ''}`}>
             {/* Sidebar */}
             <div className={`${styles.menuside}`}>
-                {/* Desktop Toggle Icon */}
                 <div onClick={handleSidebarToggle} className={`${styles.sidebaricn} ${styles.desktopToggle}`}>
                     <BsLayoutSidebar />
                 </div>
-                
                 <div className={`${styles.menuicnndtext}`}>
                     <div className={`${styles.trendicn}`}>
-                        <Image
-
-src={logo}
-alt='navlogo'
-
-/>
+                        <Image src={logo} alt='navlogo' />
                     </div>
                     <div className={`${styles.hndp}`}>
                         <h2>ClientPortal</h2>
@@ -110,22 +104,32 @@ alt='navlogo'
                 <div className={`${styles.wholemenu}`}>
                     <h2>MAIN MENU</h2>
                     <div className={`${styles.dura}`}>
-                        <div className={`${styles.theduras} ${activeMenu === "Overview" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Overview")}>
+                        <div
+                            className={`${styles.theduras} ${activeMenu === "Overview" ? styles.activeMenu : ""}`}
+                            onClick={() => setActiveMenu("Overview")}
+                        >
                             <div><MdGridView /></div>
                             <p>Overview</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Projects" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Projects")}>
+                        <div
+                            className={`${styles.theduras} ${activeMenu === "Projects" ? styles.activeMenu : ""}`}
+                            onClick={() => setActiveMenu("Projects")}
+                        >
                             <div><GoFileDirectory /></div>
                             <p>Projects</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Invoices" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Invoices")}>
-                            <div><LuDollarSign />
-</div>
+                        <div
+                            className={`${styles.theduras} ${activeMenu === "Invoices" ? styles.activeMenu : ""}`}
+                            onClick={() => setActiveMenu("Invoices")}
+                        >
+                            <div><LuDollarSign /></div>
                             <p>Invoices</p>
                         </div>
-                        <div className={`${styles.theduras} ${activeMenu === "Settings" ? styles.activeMenu : ""}`} onClick={() => setActiveMenu("Settings")}>
-                            <div><CiSettings />
-</div>
+                        <div
+                            className={`${styles.theduras} ${activeMenu === "Settings" ? styles.activeMenu : ""}`}
+                            onClick={() => setActiveMenu("Settings")}
+                        >
+                            <div><CiSettings /></div>
                             <p>Settings</p>
                         </div>
                     </div>
@@ -133,13 +137,15 @@ alt='navlogo'
             </div>
 
             {/* Top Navigation and Main Content */}
-            <div className={`${styles.topnavndcontent} ${isSidebarCollapsed ? styles.expanded : ''}`} onClick={handleMainContentClick}>
+            <div
+                className={`${styles.topnavndcontent} ${isSidebarCollapsed ? styles.expanded : ''}`}
+                onClick={handleMainContentClick}
+            >
                 <div className={`${styles.topnavside}`}>
-                    {/* Mobile Toggle Icon */}
                     <div onClick={handleSidebarToggle} className={`${styles.sidebaricn} ${styles.mobileToggle}`}>
                         <BsLayoutSidebar />
                     </div>
-                    
+
                     <div className={`${styles.searchgen}`}>
                         <div>
                             <FiSearch />
@@ -147,7 +153,7 @@ alt='navlogo'
                         </div>
                     </div>
 
-                    <div className={`${styles.notifygen}`} onClick={handleNotificationsToggle}>
+                    <div className={`${styles.notifygen}`} onClick={handleNotificationsToggle} ref={notifyRef}>
                         <div className={`${styles.notifyicn}`}>
                             <IoMdNotificationsOutline />
                         </div>
@@ -157,8 +163,8 @@ alt='navlogo'
                                 <div><h3 className={`${styles.noti}`}>🔔 Notifications</h3></div>
                                 <div className={styles.grpgen}>
                                     <div className={`${styles.grp1}`}>
-                                        <h3>• New user Registered</h3>
-                                        <p>John Doe joined 5mins ago</p>
+                                        <h3>• Action Required</h3>
+                                        <p>Your subscription will expire in 7 days. Please update your payment details.</p>
                                     </div>
                                     <div className={`${styles.grp2}`}>
                                         <h3>• System Maintenance</h3>
@@ -173,17 +179,13 @@ alt='navlogo'
                         )}
                     </div>
 
-                    <div className={`${styles.profilesection}`} onClick={handleProfileToggle}>
-                        <Image
-                            className={styles.prof}
-                            src={profile}
-                            alt='profile_pic'
-                        />
+                    <div className={`${styles.profilesection}`} onClick={handleProfileToggle} ref={profileRef}>
+                        <Image className={styles.prof} src={profile} alt='profile_pic' />
                         {isProfileOpen && (
                             <div className={styles.profileDropdown}>
                                 <div className={`${styles.adminpart}`}>
-                                    <p>Admin User</p>
-                                    <h3>admin@nimbusadmin.com</h3>
+                                    <p>Obinna Nwobodo</p>
+                                    <h3>clientportal@gmail.com</h3>
                                 </div>
                                 <div className={`${styles.profndset}`}>
                                     <div className={`${styles.profndicn}`}>
