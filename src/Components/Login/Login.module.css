@@ -1,0 +1,165 @@
+
+
+.loginContainer {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.headerLogo {
+  font-size: 48px;
+  color: #4b5563;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.welcomeMessage h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.welcomeMessage p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.loginCard {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.loginCard h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.loginCard > p {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #1f2937;
+  box-sizing: border-box;
+}
+
+.formGroup input::placeholder {
+  color: #9ca3af;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.passwordToggleIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.optionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+}
+
+.rememberMe input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;
+}
+
+.forgotPassword {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.signInButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signInButton:hover {
+  background-color: #2563eb;
+}
+
+.supportLink {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.supportLink a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.supportLink a:hover {
+  text-decoration: underline;
+}

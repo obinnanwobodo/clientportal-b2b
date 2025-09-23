@@ -1,0 +1,342 @@
+.genprojects{
+
+}
+
+
+.pm{
+
+}
+
+.projndbtn{
+display: flex;
+align-items: center;
+
+justify-content: space-between;
+}
+
+
+.projects{
+font-size: 30px;
+color: #0f172a;
+font-family: system-ui;
+font-weight: 700;
+}
+
+.manage{
+
+font-size: 16px;
+color: #3e578e;
+font-family: system-ui;
+
+}
+
+
+.icnndproj{
+display: flex;
+background-color: #3683f6;
+color: #ffffff;
+justify-content: center;
+align-items: center;
+max-height: 30px;
+border-radius: 8px;
+padding: 18px 9px;
+gap: 5px;
+}
+
+
+.projicn{
+
+}
+
+.np{
+font-size: 14px;
+font-family: system-ui;
+color: #ffffff;
+
+}
+
+
+.searchgen{
+    display: flex;
+background-color: #ffffff;
+gap: 10px;
+padding: 5px;
+align-items: center;
+max-width: 400px;
+margin-top: 30px;
+border-radius: 10px;
+}
+
+
+.searchgen input{
+outline: none;
+width: 100%;
+
+}
+
+
+.searchgen input::placeholder{
+font-size: 14px;
+color: gray;
+}
+
+
+.searchicn{
+width: 16px;
+height: 16px;
+}
+
+
+
+/* MAPPING */
+
+
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  font-family:system-ui;
+  margin-top: 25px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.cardTitleGroup {
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  font-family: system-ui;
+}
+
+.cardSubtitle {
+  font-size: 14px;
+  color: #3e578e;
+  margin: 4px 0 0;
+  font-family: system-ui;
+
+}
+
+.cardMenu {
+  
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #3e578e;
+  margin-bottom: 15px;
+  font-family: system-ui;
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 8px;
+  border-radius: 50px;
+  text-transform: capitalize;
+}
+
+/* Status tags */
+.statusin-progress {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-family: system-ui;
+
+}
+
+.statusplanning {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-family: system-ui;
+
+
+}
+
+.statuscompleted {
+  background-color: #d1fae5;
+  color: #059669;
+  font-family: system-ui;
+
+}
+
+/* Priority tags */
+.priorityhigh {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-family: system-ui;
+
+}
+
+.prioritymedium {
+  background-color: #fffbeb;
+  color: #f59e0b;
+  font-family: system-ui;
+
+}
+
+.prioritylow {
+  background-color: #ecfdf5;
+  color: #10b981;
+  font-family: system-ui;
+
+}
+
+.progressSection {
+ 
+  
+}
+
+.progressLabel {
+  font-size: 14px;
+  color: #3e578e;
+ 
+}
+
+.progressBarContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressBar {
+  background-color: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 4px;
+  background-color: #3b82f6;
+}
+
+.progressText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  width: 40px;
+  text-align: right;
+}
+
+.cardFooter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footerItemname {
+  display: flex;
+ align-items: center;
+  font-size: 14px;
+  color: #3e578e;
+  font-family: system-ui;
+gap: 8px;
+}
+.footerItemnamee {
+  display: flex;
+ align-items: center;
+  font-size: 14px;
+  color: #3e578e;
+  font-family: system-ui;
+position: relative;
+left: 40px;
+gap: 8px;
+}
+
+.footerItem {
+  font-size: 16px;
+  color: #0f172a;
+  font-family: system-ui;
+font-weight: 500;
+}
+
+
+
+
+
+/* DROPDOWN MENU ON EACH BOXES */
+
+.dropdownMenu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  font-family: system-ui;
+
+}
+
+.dropdownItem {
+  padding: 5px 14px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: system-ui;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card:hover{
+      transform: translateY(-2px); /* lift up slightly */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* dark shadow */
+  border-radius: 4px; /* optional smoothness */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+
+  }
+
+
+
+.dropdownItem:hover {
+  background: #f3f4f6;
+}
+
+.dropdownItemDelete {
+  padding: 5px 14px;
+  font-size: 14px;
+  color: #ef4444;
+  cursor: pointer;
+  border-top: 1px solid #f3f4f6;
+}
+
+.dropdownItemDelete:hover {
+  background: #fee2e2;
+}
