@@ -77,7 +77,7 @@ const Navbar = () => {
             default:
                 return (
                     <div className={`${styles.genContent}`}>
-                        <h2>Welcome to NimbusAdmin!</h2>
+                        <h2>Welcome to Cient Portal!</h2>
                     </div>
                 );
         }

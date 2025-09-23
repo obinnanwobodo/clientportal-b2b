@@ -340,3 +340,131 @@ font-weight: 500;
 .dropdownItemDelete:hover {
   background: #fee2e2;
 }
+
+
+
+
+
+
+/* RESPONSIVNESS */
+
+
+
+@media (max-width: 768px) {
+  /* General Layout Adjustments */
+  .genprojects {
+    padding: 0 10px; /* Add some padding for mobile view */
+  }
+
+  /* Header and Button */
+  .projndbtn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .icnndproj {
+    width: 100%; /* Make the button full-width */
+    justify-content: center;
+  }
+
+  /* Search Bar */
+  .searchgen {
+    max-width: 100%; /* Make the search bar full-width */
+  }
+
+  /* Project Grid */
+  .dashboardGrid {
+    grid-template-columns: 1fr; /* Single column for all cards */
+  }
+
+  /* Card and its elements */
+  .card {
+    padding: 15px; /* Adjust card padding */
+  }
+
+  .cardHeader {
+    align-items: center; /* Center header items vertically */
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardSubtitle {
+    font-size: 13px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+
+  .tags {
+    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
+  }
+
+  .cardFooter {
+    grid-template-columns: 1fr; /* Stack footer items */
+    gap: 10px;
+  }
+
+  .footerItemname,
+  .footerItemnamee {
+    left: 0; /* Remove the left offset on the members count */
+    justify-content: flex-start;
+  }
+
+  .footerItem {
+    font-weight: 600;
+  }
+
+  /* Dropdown Menu */
+  .dropdownMenu {
+    right: auto; /* Re-align dropdown menu */
+    left: 10px;
+    min-width: 120px;
+  }
+}
+
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  /* General Layout Adjustments */
+  .genprojects {
+    padding: 0 15px; /* Adjust padding for tablets */
+  }
+
+  /* Project Grid */
+  .dashboardGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for cards */
+  }
+
+  /* Card and its elements */
+  .card {
+    padding: 18px; /* Slightly reduce padding */
+  }
+
+  .cardTitle {
+    font-size: 17px;
+  }
+
+  .cardSubtitle {
+    font-size: 13px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+
+  /* Footer */
+  .cardFooter {
+    gap: 8px; /* Slightly smaller gap */
+  }
+
+  .footerItemnamee {
+    left: 10px; /* Adjust left offset for the members count */
+  }
+}

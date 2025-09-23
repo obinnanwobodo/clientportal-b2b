@@ -1,71 +1,80 @@
 'use client'
-
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./Login.module.css";
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false); // 👈 state for popup
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted!");
+    setLoading(true); // show popup
+
+    // Fake login delay (2 seconds)
+    setTimeout(() => {
+      router.push("/dashboard");
+      setLoading(false); // hide popup
+    }, 8000);
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <div className={styles.headerLogo}>🛡️</div>
-
-      <div className={styles.welcomeMessage}>
-        <h1>Welcome Back</h1>
-        <p>Sign in to your client portal</p>
-      </div>
+    <div className={styles.loginWrapper}>
+      
 
       <div className={styles.loginCard}>
-        <h2>Sign In</h2>
-        <p>Enter your email and password to access your account</p>
+        <h1 className={styles.title}>Welcome Back</h1>
+        <p className={styles.subtitle}>Sign in to your client portal</p>
 
-        <form onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="name@company.com" />
-          </div>
+        <form onSubmit={handleSubmit} className={styles.loginForm}>
+          <label>Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Free to access for now, put any email"
+            required   
+          />
 
-          <div className={styles.formGroup}>
-            <label htmlFor="password">Password</label>
-            <div className={styles.inputWrapper}>
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                placeholder="Enter your password"
-              />
-              <span
-                className={styles.passwordToggleIcon}
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? "🙈" : "👁️"}
-              </span>
-            </div>
-          </div>
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter any password for now"
+            required
+          />
 
-          <div className={styles.optionsRow}>
-            <div className={styles.rememberMe}>
-              <input type="checkbox" id="remember-me" />
-              <label htmlFor="remember-me">Remember me</label>
-            </div>
-            <a href="#" className={styles.forgotPassword}>
+          <div className={styles.options}>
+            <label className={styles.checkbox}>
+              <input type="checkbox" /> Remember me
+            </label>
+            <a href="#" className={styles.forgot}>
               Forgot password?
             </a>
           </div>
 
-          <button type="submit" className={styles.signInButton}>
-          <a href="/">  Sign In</a>
+          <button type="submit" className={styles.loginBtn}>
+            Sign In
           </button>
         </form>
 
-        <div className={styles.supportLink}>
+        <p className={styles.help}>
           Need help? <a href="#">Contact support</a>
-        </div>
+        </p>
       </div>
+
+      {/* 👇 Loading popup overlay */}
+      {loading && (
+        <div className={styles.loadingOverlay}>
+          <div className={styles.loadingBox}>
+            <div className={styles.spinner}></div>
+            <p>⚠️  You’ll be logged in without authentication. <br />This is just a front-end demo with no back-end connection for now, <br />so you can access & see the page freely.”</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

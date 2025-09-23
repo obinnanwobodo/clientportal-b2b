@@ -1,5 +1,12 @@
-.gensettings{
-
+.gensettings {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px; /* 🔑 Allow expansion */
+  margin: 0 auto;   /* 🔑 Keep centered */
+  box-sizing: border-box;
 }
 
 .settings{
@@ -23,17 +30,24 @@ font-family: system-ui;
 
 
 .profileCard {
+
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   padding: 24px;
-  width: 100%;
-  max-width: 675px;
-  margin: auto;
+
+  flex: none;            /* prevent flex from resizing left automatically */
+  width: 65%;            /* default width */
+  max-width: none;       /* allow custom width */
+  margin-left: 0;        /* keep left edge fixed */
   margin-top: 30px;
- position: relative;
- right: 183px;
 }
+
+.profileExpanded {
+  width: 72%;          /* expanded width when sidebar collapses */
+}
+
+
 
 .profileHeader {
   display: flex;
@@ -187,13 +201,12 @@ font-family: system-ui;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   padding: 24px;
-  width: 100%;
-  max-width: 675px;
+  flex: 2;         /* 🔑 allow expansion */
+  min-width: 300px;
+  max-width: 100%;
   margin: auto;
-   margin-top: 30px;
- position: relative;
- right: 11px;
 }
+
 
 .header {
   display: flex;
@@ -352,11 +365,11 @@ input:checked + .slider:before {
   padding: 24px;
   width: 100%;
   max-width: 400px;
-  min-width: 345px;
   margin: 20px auto;
   font-family: system-ui;
   position: relative;
   bottom: 755px;
+  left: 10px;
 }
 
 .accountStatusHeader {
@@ -432,6 +445,8 @@ input:checked + .slider:before {
   max-width: 400px;
   position: relative;
   bottom: 754px;
+  left: 10px;
+
 }
 
 .quickActionsHeader {
@@ -485,3 +500,212 @@ input:checked + .slider:before {
 
 /* STORAGEE */
 
+
+
+.storageCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ width: 100%;
+  max-width: 400px;
+  
+  margin: 20px auto;
+  font-family: system-ui;
+  position: relative;
+  bottom: 755px;
+  left: 10px;
+
+}
+
+.storageCard h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin: 0 0 20px 0;
+}
+
+.storageInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.storageInfo span {
+  font-size: 16px;
+  color: #555555;
+}
+
+.usedStorage {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+
+.progressBarContainer {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.progressBar {
+  background-color: #3b82f6;
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease-in-out;
+}
+
+.storageText {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVNESS */
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Main Container */
+  .settingsgen {
+    padding: 0 10px; /* Reduce padding for smaller screens */
+    gap: 20px;
+  }
+
+  /* Profile Card Layout */
+  .profileCard,
+  .profileExpanded {
+    width: 100%; /* Make profile card full width */
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr; /* Stack form fields vertically */
+    gap: 15px;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 14px; /* Slightly increase font size for readability */
+  }
+
+  .formGroup input::placeholder{
+font-size: 15px;
+  }
+
+
+
+  .submitButton {
+    width: 100%; /* Make the save button full width */
+  }
+
+  /* Right-hand side (Notification + 3 Cards) */
+  .leftnd3 {
+    flex-direction: column; /* Stack the sections vertically */
+    gap: 20px;
+  }
+
+  /* Notification Card */
+  .container {
+    width: 100%; /* Make notification card full width */
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  /* The 3 small cards layout */
+  .the3 {
+    display: flex;
+    flex-direction: column; /* Stack the three cards vertically */
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Account Status Card */
+  .accountStatusCard,
+  .quickActionsCard,
+  .storageCard {
+    width: 100%; /* Make all three cards full width */
+    max-width: 100%;
+    margin: 0;
+    /* Reset the hacky positioning */
+    position: static;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+  
+
+
+
+
+@media (min-width: 769px) and (max-width: 1337px) {
+  /* Main Container */
+  .settingsgen {
+    padding: 0;
+    gap: 25px;
+  }
+
+  /* Profile Card Layout */
+  .profileCard,
+  .profileExpanded {
+    width: 100%; /* Keep profile card full width on its own row */
+    max-width: 100%;
+  }
+
+  .formGrid {
+    gap: 20px;
+  }
+
+  /* Right-hand side (Notification + 3 Cards) */
+  .leftnd3 {
+    flex-direction: column; /* Stack the notification and the card group */
+    gap: 20px;
+  }
+  
+  /* Notification Card */
+  .container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  /* The 3 small cards layout */
+  .the3 {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* The 3 small cards width */
+  .accountStatusCard,
+  .quickActionsCard,
+  .storageCard {
+    width: calc(50% - 10px); /* Display two cards per row */
+    max-width: calc(50% - 10px);
+    margin: 0;
+    /* Reset the hacky positioning */
+    position: static;
+    bottom: 0;
+    left: 0;
+  }
+}

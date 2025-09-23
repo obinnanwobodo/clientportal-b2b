@@ -92,6 +92,7 @@ const Invoices = () => {
 
 
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
+   const [isToolbarExpanded, setIsToolbarExpanded] = useState(true);
   const menuRefs = useRef([]); // store refs for dropdowns
 
   const toggleMenu = (index) => {
@@ -175,7 +176,7 @@ const Invoices = () => {
 
 
       {/* Toolbar */}
-      <div className={styles.toolbar}>
+      <div  className={`${styles.toolbar} ${isToolbarExpanded ? styles.expanded : styles.collapsed}`}>
         <div className={styles.searchFilter}>
           <div> <FiSearch /></div>
           <input

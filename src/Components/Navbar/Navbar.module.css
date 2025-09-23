@@ -30,22 +30,7 @@
 }
 
 
-.collapsed  .revtrendgen{
-left: 0; /* Moves the top nav to the far left */
-  width: 100%; /* Makes the top nav full width */
-}
-/* .revnduser{ */
-.collapsed .usergen{
-left: 0; /* Moves the top nav to the far left */
-  width: 100%; /* Makes the top nav full width */
-}
 
-
-
-.collapsed .recentgen{
-left: 0; /* Moves the top nav to the far left */
-  width: 100%; /* Makes the top nav full width */
-}
 
 
 
@@ -721,7 +706,6 @@ padding: 1px;
   .topnavndcontent {
     width: 100%;
     margin-left: 0;
-    padding-top: 80px; /* Increase top padding to prevent content overlap */
     background-color: rgba(255, 255, 255, 0.08);
   }
 

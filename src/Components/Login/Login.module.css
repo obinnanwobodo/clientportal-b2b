@@ -1,165 +1,152 @@
-
-
-.loginContainer {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  background-color: #f0f2f5;
+.loginWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
-}
-
-.headerLogo {
-  font-size: 48px;
-  color: #4b5563;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.welcomeMessage h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.welcomeMessage p {
-  font-size: 16px;
-  color: #6b7280;
-  margin-bottom: 30px;
-  text-align: center;
+  background: #f9fafb;
 }
 
 .loginCard {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
+  text-align: center;
 }
 
-.loginCard h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #1f2937;
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
-.loginCard > p {
-  font-size: 15px;
-  color: #6b7280;
-  margin-bottom: 25px;
-}
-
-.formGroup {
+.subtitle {
+  font-size: 0.95rem;
+  color: #555;
   margin-bottom: 20px;
 }
 
-.formGroup label {
-  display: block;
-  font-size: 15px;
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 8px;
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.inputWrapper {
-  position: relative;
+.loginForm label {
+  font-size: 0.9rem;
+  margin: 8px 0 4px;
+  color: #333;
 }
 
-.formGroup input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d1d5db;
+.loginForm input {
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  font-size: 16px;
-  color: #1f2937;
-  box-sizing: border-box;
-}
-
-.formGroup input::placeholder {
-  color: #9ca3af;
-}
-
-.formGroup input:focus {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
+  transition: border 0.2s;
 }
 
-.passwordToggleIcon {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #9ca3af;
-  font-size: 18px;
+.loginForm input:focus {
+  border-color: #2563eb;
 }
 
-.optionsRow {
+.options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-  font-size: 14px;
+  margin: 10px 0 20px;
+  font-size: 0.85rem;
 }
 
-.rememberMe {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #4b5563;
+.checkbox input {
+  margin-right: 6px;
 }
 
-.rememberMe input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #3b82f6;
-}
-
-.forgotPassword {
-  color: #3b82f6;
+.forgot {
+  color: #2563eb;
   text-decoration: none;
 }
 
-.forgotPassword:hover {
+.forgot:hover {
   text-decoration: underline;
 }
 
-.signInButton {
-  width: 100%;
-  padding: 14px;
-  background-color: #3b82f6;
-  color: #ffffff;
+.loginBtn {
+  background: #2563eb;
+  color: white;
   border: none;
+  padding: 12px;
   border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s;
 }
 
-.signInButton:hover {
-  background-color: #2563eb;
+.loginBtn:hover {
+  background: #1e40af;
 }
 
-.supportLink {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #6b7280;
+.help {
+  font-size: 0.85rem;
+  margin-top: 16px;
+  color: #666;
 }
 
-.supportLink a {
-  color: #3b82f6;
+.help a {
+  color: #2563eb;
   text-decoration: none;
 }
 
-.supportLink a:hover {
+.help a:hover {
   text-decoration: underline;
+}
+
+
+
+
+
+
+/* LOADING BOX */
+
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loadingBox {
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0070f3;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

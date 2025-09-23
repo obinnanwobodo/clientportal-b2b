@@ -1,3 +1,42 @@
+
+/* Expanded state */
+.expanded {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+/* Collapsed state */
+.collapsed {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+
+.expanded .searchFilter {
+  /* take all remaining space */
+}
+
+.expanded .searchInput {
+  width: 100%; /* fully expand input */
+}
+
+/* Collapsed state */
+.collapsed .searchFilter {
+  width: 100%; /* stack full width */
+}
+
+.collapsed .searchInput {
+  width: 100%; /* full width too */
+}
+
+
+
+
+
+
+
+
 .geninvoices{
 
     
@@ -169,6 +208,7 @@ align-items: center;
 padding: 0px 5px;
   border-radius: 8px;
     border: 1px solid #d1d1d1;
+    width: 400px;
 
 }
 
@@ -198,7 +238,7 @@ padding: 0px 5px;
 
 .filterButton{
     position: relative;
-    right: 310px;
+    right: 200px;
     border: 1px solid #d1d1d1;
 }
 
@@ -348,4 +388,121 @@ font-weight: 500;
 
 .dropdownItemDelete:hover {
   background: #fee2e2;
+}
+
+
+
+
+
+
+/* RESPONSIVNESS */
+
+
+
+@media (max-width: 768px) {
+  /* General container adjustments */
+  .geninvoices {
+    padding: 0 10px;
+  }
+
+  /* Header and button layout */
+  .firstsetgen {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .icnndci {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Dashboard cards layout */
+  .dashboardContainer {
+    right: 0; /* Remove the right offset */
+    padding: 0; /* Adjust padding for mobile */
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  .dashboardCards {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .card {
+    width: 100%; /* Make each card full width */
+  }
+
+  /* Toolbar layout */
+  .toolbar {
+    flex-direction: column; /* Stack toolbar items */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .searchFilter {
+    width: 100%; /* Make search bar full width */
+  }
+
+  .filterButton,
+  .exportButton {
+    width: 100%; /* Make buttons full width */
+    justify-content: center;
+    position: static; /* Remove the left offset */
+   
+  }
+
+  /* Table adjustments */
+  .tableContainer {
+    overflow-x: auto; /* Enable horizontal scrolling for the table */
+  }
+
+  .invoiceTable {
+    width: 700px; /* Set a fixed width to prevent overflow on small screens */
+  }
+
+  /* Dropdown menu positioning */
+  .dropdownMenu {
+    right: auto;
+    left: 10px;
+    min-width: 120px;
+  }
+}
+
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  /* Dashboard cards layout */
+  .dashboardContainer {
+    right: 0;
+    padding: 20px;
+  }
+
+  .dashboardCards {
+    flex-wrap: wrap; /* Keep cards wrapped */
+  }
+
+  .card {
+    width: calc(50% - 10px); /* Display two cards per row */
+  }
+
+  /* Toolbar adjustments */
+  .searchFilter {
+    width: 250px; /* Reduce search bar width */
+  }
+
+  .filterButton {
+    right: 100px; /* Adjust the right offset for the filter button */
+  }
+
+  /* Table remains full-width but with some padding */
+  .container {
+    padding: 15px;
+  }
 }
