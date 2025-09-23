@@ -220,8 +220,8 @@ const Invoices = () => {
               {invoices.map((invoice, index) => (
                 <tr key={index} className={styles.relative} ref={(el) => (menuRefs.current[index] = el)}>
                   <td className={styles.invoiceid}>{invoice.id}</td>
-                  <td>{invoice.client}</td>
-                  <td>{invoice.project}</td>
+                  <td className={styles.invoiceclient}>{invoice.client}</td>
+                  <td className={styles.invoiceproject}>{invoice.project}</td>
                   <td className={styles.invoiceamt}>{invoice.amount}</td>
                   <td>
                     <span
@@ -230,8 +230,8 @@ const Invoices = () => {
                       {invoice.status}
                     </span>
                   </td>
-                  <td>{invoice.dueDate}</td>
-                  <td>{invoice.issueDate}</td>
+                  <td className={styles.invoicedate}>{invoice.dueDate}</td>
+                  <td className={styles.invoiceissue}>{invoice.issueDate}</td>
                   <td onClick={() => toggleMenu(index)}>
                     <FiMoreVertical className={styles.menuIcon} />
                   </td>

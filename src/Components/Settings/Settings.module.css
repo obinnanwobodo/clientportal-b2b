@@ -372,6 +372,10 @@ input:checked + .slider:before {
   left: 10px;
 }
 
+.accountStatusIcon svg{
+  color: #0f172a;
+}
+
 .accountStatusHeader {
   display: flex;
   align-items: center;

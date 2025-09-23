@@ -212,6 +212,10 @@ padding: 0px 5px;
 
 }
 
+.searchFilter svg{
+  color: gray;
+}
+
 .searchInput {
   display: flex;
   padding: 10px;
@@ -233,8 +237,14 @@ padding: 0px 5px;
   align-items: center;
   gap: 5px;
     border: 1px solid #d1d1d1;
-
+color: gray;
 }
+
+.filterButton svg,
+.exportButton svg{
+  color: gray;
+}
+
 
 .filterButton{
     position: relative;
@@ -282,6 +292,15 @@ padding: 0px 5px;
 .invoiceid, .invoiceamt{
      font-family: system-ui;
 font-weight: 500;
+color: #0f172a;
+}
+
+.invoiceclient, .invoiceproject, .invoicedate, .invoiceissue{
+
+
+
+  font-family: system-ui;
+  color: #0f172a;
 }
 
 .invoiceTable tbody tr:hover {

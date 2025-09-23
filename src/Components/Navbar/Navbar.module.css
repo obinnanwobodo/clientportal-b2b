@@ -304,6 +304,11 @@ font-weight: 700;
   border-radius: 8px; 
 }
 
+.searchgen svg{
+  color: gray;
+}
+
+
 .sidebaricn svg {
   color: #6e7a91;
 }

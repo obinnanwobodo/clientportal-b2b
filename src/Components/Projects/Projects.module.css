@@ -86,7 +86,9 @@ width: 16px;
 height: 16px;
 }
 
-
+.searchicn svg{
+  color: gray;
+}
 
 /* MAPPING */
 
@@ -467,4 +469,4 @@ font-weight: 500;
   .footerItemnamee {
     left: 10px; /* Adjust left offset for the members count */
   }
-}
+} 
