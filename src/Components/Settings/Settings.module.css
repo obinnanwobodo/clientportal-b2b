@@ -229,9 +229,16 @@ font-family: system-ui;
   margin: 4px 0 0;
 }
 
-.icon {
-  font-size: 22px;
+.iconbell {
+ 
   color: #4b5563;
+  width: 30px;
+  height: 30px;
+}
+
+.iconbell svg{
+  width: 16px;
+  height: 16px;
 }
 
 .settingsList {
@@ -610,6 +617,18 @@ input:checked + .slider:before {
 font-size: 15px;
   }
 
+  .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.iconbell {
+  color: #4b5563;
+  min-width: 26px;
+  min-height: 26px;
+ 
+}
 
 
   .submitButton {

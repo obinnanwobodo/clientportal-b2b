@@ -106,7 +106,7 @@ const Settings =  ({ isSidebarCollapsed }) => {
         <div className={styles.container}>
           {/* Header */}
           <div className={styles.header}>
-            <LuBell className={styles.icon} />
+            <LuBell className={styles.iconbell} />
             <div>
               <h2>Notification Preferences</h2>
               <p>Choose how you want to be notified about important updates</p>
