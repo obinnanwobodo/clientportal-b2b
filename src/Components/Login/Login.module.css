@@ -49,6 +49,7 @@
   font-size: 0.95rem;
   outline: none;
   transition: border 0.2s;
+  color: #212;
 }
 
 .loginForm input:focus {
@@ -56,7 +57,7 @@
 }
 
 .loginForm input::placeholder{
-color: #121;
+color: gray;
 font-size: 13px;
 }
 
